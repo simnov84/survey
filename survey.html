@@ -7,93 +7,233 @@
     <title>Survey Form</title>
     <style>
         body{
-            background-color: rgb(255, 255, 255);
-            }
+            
+           
+            background-color: white;
+            font-family:sans-serif;
+            line-height: 1.5;
+            color: black;
+        }
         form{
-            border-style:double;
-            border-color: mediumblue;
-            background-color: navajowhite;
-            width: 50%;
-            font-size: 20px;
-            font-family: cursive;
-            font-variant: small-caps;
-            margin: 50px auto;
-            padding: 30px 20px;
-            line-height: 30px;
-            border-radius: 20px;
-            <!--background-image: url(https://static6.depositphotos.com/1005979/663/i/950/depositphotos_6637647-stock-photo-what-do-you-think-survey.jpg);-->
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100%;
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid black;
+            padding: 5px 10px;
             
         }
-        </style>
+        span{
+            color: red;
+        
+        }
+        .fields{
+            font-weight: bolder;
+            font-size: 10px;
+        }
+        .stars{
+            color:rgb(197, 163, 119);
+        }
+        .inner{
+            font-size: 8px;
+        }
+        .table{
+            font-size: 9px; 
+            padding-left: 10px;
+        }
+        th,td{
+            padding-left: 20px;
+        } 
+        tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+
+    </style>
 </head>
 <body>
     <form>
-        <h1 style="padding-left: 40%; color: midnightblue;">Restaurant<br> Survey</h1>
-        <div style="text-align: right;"><b>Please help us learn</b><br>what we're doing right and <br>what we need more work<br>on by filling out this card<br></div>
-        <img src="https://image.shutterstock.com/image-vector/restaurant-logo-template-260nw-1254530365.jpg" id="image"><br><br>
         <div>
-            <label for="how">How many in your party? _________________ Date_____________</label><br><br>
-            <input type="checkbox">Dine in
-            <input type="checkbox">Take out
-            <input type="checkbox">Breakfast
-            <input type="checkbox">Lunch
-            <input type="checkbox">Dinner<br><br>
+            <label class="fields">Name <span>*</span></label><br>
+            <div style="display: inline-block;font-size: 10px; ">
+                <input type="text" name="" id="first" required><br>
+                <label class="inner" for="first">First</label>
+                </div>
+            <div style="display: inline-block;font-size: 10px;">
+                <input type="text" name="" id="last"><br>
+                <label class="inner" for="last">Last</label>
+                </div>
         </div>
-        <label>The name of your server:___________________________________</label><br><br>
-        <label>What did you order? _____________________________________</label><br>
-        <label>_____________________________________________________</label>
-        <label>_____________________________________________________</label><br><br>
-        <div class="rest">
-            <label style="font-size: 30px;"><b>Quality of food:</b></label>
-            <input type="checkbox" name="" id="">Excellent
-            <input type="checkbox" name="" id="">Good
-            <input type="checkbox" name="" id="">Fair
-            <input type="checkbox" name="" id="">Poor<br><br>
-            <label style="font-size: 30px;"><b>Portion size:</b></label>
-            <input type="checkbox" name="" id="">Excellent
-            <input type="checkbox" name="" id="">Good
-            <input type="checkbox" name="" id="">Fair
-            <input type="checkbox" name="" id="">Poor<br><br>
-            <label style="font-size: 30px;"><b>Ease of ordering:</b></label>
-            <input type="checkbox" name="" id="">Excellent
-            <input type="checkbox" name="" id="">Good
-            <input type="checkbox" name="" id="">Fair
-            <input type="checkbox" name="" id="">Poor<br><br>
-            <label style="font-size: 30px;"><b>Service:</b></label>
-            <input type="checkbox" name="" id="">Excellent
-            <input type="checkbox" name="" id="">Good
-            <input type="checkbox" name="" id="">Fair
-            <input type="checkbox" name="" id="">Poor<br><br>
-            <label style="font-size: 30px;"><b>Cleanliness:</b></label>
-            <input type="checkbox" name="" id="">Excellent
-            <input type="checkbox" name="" id="">Good
-            <input type="checkbox" name="" id="">Fair
-            <input type="checkbox" name="" id="">Poor<br><br>
-            <label style="font-size: 30px;"><b>Overall Value:</b></label>
-            <input type="checkbox" name="" id="">Excellent
-            <input type="checkbox" name="" id="">Good
-            <input type="checkbox" name="" id="">Fair
-            <input type="checkbox" name="" id="">Poor<br><br>
+        <label ></label>
+        <div>
+            <label class="fields">Email <span>*</span></label><br>
+            <div style="display: inline-block;font-size: 10px; ">
+                <input style="padding-left: 183px;" type="text" name="" id=""></div>
         </div>
-        <label>Comments? ____________________________________________</label><br>
-        <label>____________________________________________________</label>
-        <label>____________________________________________________</label>
-        <label>Age?</label>
-        <input type="checkbox" id="" >Under 18
-        <input type="checkbox" id=""style="margin-left: 30px;" >19-34
-        <input type="checkbox" id="" style="margin-left: 30px;">35-54
-        <input type="checkbox" id="" style="margin-left: 30px;">55+
-        <input type="checkbox" id="" style="margin-left: 30px;">Male
-        <input type="checkbox" id="" style="margin-left: 30px;">Female<br><br>
-        <label>How did you learn about us?</label><br>
-        <input type="checkbox" id="" >Newspaper
-        <input type="checkbox" id="" >TV
-        <input type="checkbox" id="" >Radio
-        <input type="checkbox" id="" >Friend
-        <input type="checkbox" id="" >Other: _________________
-    </form>
+        <div>
+            <label class="fields">Your Experience <span>*</span></label><br>
+            <div class="stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+              </svg></div>
+              </div><br>
+              <label class="inner">Overall,how would you rate your experience with us?</label><br>
+              <label class="fields">How satisfied are you with <span>*</span></label><br>
+              
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Very Unsatisfied</th>
+                    <th scope="col">Unsatisfied</th>
+                    <th scope="col">Neutral</th>
+                    <th scope="col">Satisfied</th>
+                    <th scope="col">Very Satisfied</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Purchase</th>
+                    <td>
+                        <div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                  <td><div>
+                    <label><input type="radio" id='' name=""></label>
+                </div></td>
+                <td><div>
+                  <label><input type="radio" id='' name=""></label>
+              </div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Service</th>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                  <td><div>
+                    <label><input type="radio" id='' name=""></label>
+                </div></td>
+                <td><div>
+                  <label><input type="radio" id='' name=""></label>
+              </div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Company Overall</th>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                  <td><div>
+                    <label><input type="radio" id='' name=""></label>
+                </div></td>
+                <td><div>
+                  <label><input type="radio" id='' name=""></label>
+              </div></td>
+                  </tr>
+                </tbody>
+              </table>
+            
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Very Unlikely</th>
+                    <th scope="col">Unlikely</th>
+                    <th scope="col">Neutral</th>
+                    <th scope="col">Likely</th>
+                    <th scope="col">Very Likely</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Buy from us again</th>
+                    <td>
+                        <div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                  <td><div>
+                    <label><input type="radio" id='' name=""></label>
+                </div></td>
+                <td><div>
+                  <label><input type="radio" id='' name=""></label>
+              </div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Recommend our products to others</th>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                  <td><div>
+                    <label><input type="radio" id='' name=""></label>
+                </div></td>
+                <td><div>
+                  <label><input type="radio" id='' name=""></label>
+              </div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Recommend our company to others</th>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                    <td><div>
+                      <label><input type="radio" id='' name=""></label>
+                  </div></td>
+                  <td><div>
+                    <label><input type="radio" id='' name=""></label>
+                </div></td>
+                <td><div>
+                  <label><input type="radio" id='' name=""></label>
+              </div></td>
+                  </tr>
+                </tbody>
+              </table>
+            
+                
+              
+              <label class="fields">Additional comments or suggestions</label>
+              <textarea style="height: 100px;width: 400px;"></textarea><br>
+              <input type="submit" value="submit">
+        </form>
 </body>
 </html>
