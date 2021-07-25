@@ -5,235 +5,312 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" crossorigin="anonymous" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC">
     <style>
         body{
-            
-           
-            background-color: white;
-            font-family:sans-serif;
-            line-height: 1.5;
-            color: black;
-        }
-        form{
-            max-width: 500px;
-            margin: auto;
-            border: 1px solid black;
-            padding: 5px 10px;
-            
-        }
-        span{
-            color: red;
-        
-        }
-        .fields{
-            font-weight: bolder;
-            font-size: 10px;
-        }
-        .stars{
-            color:rgb(197, 163, 119);
-        }
-        .inner{
-            font-size: 8px;
-        }
-        .table{
-            font-size: 9px; 
-            padding-left: 10px;
-        }
-        th,td{
-            padding-left: 20px;
-        } 
-        tr:nth-child(odd) {
-  background-color: #f2f2f2;
+    width: 100%;
+    max-width:100%;
+    height: auto;
 }
-
-
+.overall {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.bold {
+    font-weight: 700;
+}
+.red {
+    color: red;
+}
+.full-percent {
+    width: 100%;
+}
+.labelsmall {
+    font-size: 13px;
+}
+.grey {
+    background-color: lightgray;
+}
+.padd {
+    padding: 5px 0px 5px 0px;
+}
+.another-property {
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+}
+.star-rating55 {
+    font-size: 0;
+    white-space: nowrap;
+    display: inline-block;
+    width: 175px;
+    height: 35px;
+    overflow: hidden;
+    position: relative;
+    background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+    background-size: contain;
+}
+.star-rating55 i {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    z-index: 1;
+    background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+    background-size: contain;
+}
+.star-rating55 input {
+    opacity: 0;
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    position: relative;
+}
+.star-rating55 input:hover + i, .star-rating55 input:checked + i {
+    opacity: 1;
+}
+.star-rating55 i ~ i {
+    width: 40%;
+}
+.star-rating55 i ~ i ~ i {
+    width: 60%;
+}
+.star-rating55 i ~ i ~ i ~ i {
+    width: 80%;
+}
+.star-rating55 i ~ i ~ i ~ i ~ i {
+    width: 100%;
+}
     </style>
 </head>
 <body>
-    <form>
-        <div>
-            <label class="fields">Name <span>*</span></label><br>
-            <div style="display: inline-block;font-size: 10px; ">
-                <input type="text" name="" id="first" required><br>
-                <label class="inner" for="first">First</label>
+    <form method="POST">
+        <div class="container overall">
+            <div class="row">
+                <div class="bold">
+                    Name<span class="red"> *</span>
                 </div>
-            <div style="display: inline-block;font-size: 10px;">
-                <input type="text" name="" id="last"><br>
-                <label class="inner" for="last">Last</label>
+                <div class="col">
+                    <input type="text" name="fname" id="first" required><br>
+                    <label for="first" class="labelsmall">First</label>
                 </div>
+                <div class="col">
+                    <input type="text" name="lname" id="last" required><br>
+                    <label for="last" class="labelsmall">Last</label>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div><br>
+            <div class="row">
+                <div class="bold">
+                    Email<span class="red"> *</span>
+                </div>
+                <div class="col">
+                    <input type="email" name="mailid" id="email" required>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="bold">
+                    Your Experience<span class="red"> *</span>
+                </div>
+                <div class="col">
+                    <span class="star-rating55">
+                      <input type="radio" name="rating1" value="1"><i></i>
+                      <input type="radio" name="rating1" value="2"><i></i>
+                      <input type="radio" name="rating1" value="3"><i></i>
+                      <input type="radio" name="rating1" value="4"><i></i>
+                      <input type="radio" name="rating1" value="5"><i></i>
+                    </span>
+                </div><br>
+                <div>
+                    Overall, how would you rate your experience with us?
+                </div>
+            </div><br>
+            <div class="bold">
+                How satisfied are you with<span class="red"> *</span>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-2 another-property">
+                    </div>
+                    <div class="col-2 another-property">
+                        Very Unsatisfied
+                    </div>
+                    <div class="col-2 another-property">
+                        Unsatisfied
+                    </div>
+                    <div class="col-2 another-property">
+                        Neutral
+                    </div>
+                    <div class="col-2 another-property">
+                        Satisfied
+                    </div>
+                    <div class="col-2 another-property">
+                        Very Satisfied
+                    </div>
+                </div>
+                <div class="row grey">
+                    <div class="col-2 padd">
+                        Purchase
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating1" id="1" value="1" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating1" id="2" value="2" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating1" id="3" value="3" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating1" id="4" value="4" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating1" id="5" value="5" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 padd">
+                        Service
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating2" id="1" value="1" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating2" id="2" value="2" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating2" id="3" value="3" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating2" id="4" value="4" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating2" id="5" value="5" required>
+                    </div>
+                </div>
+                <div class="row grey">
+                    <div class="col-2 padd">
+                        Company Overall
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating3" id="1" value="1" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating3" id="2" value="2" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating3" id="3" value="3" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating3" id="4" value="4" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating3" id="5" value="5" required>
+                    </div>
+                </div>
+            </div><br>
+            <div class="bold">
+                How likely are you to<span class="red"> *</span>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-2 another-property">
+                    </div>
+                    <div class="col-2 another-property">
+                        Very Unsatisfied
+                    </div>
+                    <div class="col-2 another-property">
+                        Unsatisfied
+                    </div>
+                    <div class="col-2 another-property">
+                        Neutral
+                    </div>
+                    <div class="col-2 another-property">
+                        Satisfied
+                    </div>
+                    <div class="col-2 another-property">
+                        Very Satisfied
+                    </div>
+                </div>
+                <div class="row grey">
+                    <div class="col-2 padd">
+                        Buy from us again
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating4" id="1" value="1" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating4" id="2" value="2" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating4" id="3" value="3" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating4" id="4" value="4" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating4" id="5" value="5" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 padd">
+                        Recommend our product to others
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating5" id="1" value="1" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating5" id="2" value="2" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating5" id="3" value="3" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating5" id="4" value="4" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating5" id="5" value="5" required>
+                    </div>
+                </div>
+                <div class="row grey">
+                    <div class="col-2 padd">
+                        Recommend our company to others
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating6" id="1" value="1" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating6" id="2" value="2" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating6" id="3" value="3" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating6" id="4" value="4" required>
+                    </div>
+                    <div class="col-2 another-property">
+                        <input type="radio" name="rating6" id="5" value="5" required>
+                    </div>
+                </div><br>
+            </div>
+            <div class="row">
+                <div class="bold">
+                    Additional comments or suggestions
+                </div>
+                <div>
+                    <textarea name="comments" id="comment-box" cols="auto" rows="4" class="full-percent"></textarea>
+                </div>
+            </div><br>
+            <input type="submit" value="Submit">
         </div>
-        <label ></label>
-        <div>
-            <label class="fields">Email <span>*</span></label><br>
-            <div style="display: inline-block;font-size: 10px; ">
-                <input style="padding-left: 183px;" type="text" name="" id=""></div>
-        </div>
-        <div>
-            <label class="fields">Your Experience <span>*</span></label><br>
-            <div class="stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-              </svg></div>
-              </div><br>
-              <label class="inner">Overall,how would you rate your experience with us?</label><br>
-              <label class="fields">How satisfied are you with <span>*</span></label><br>
-              
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Very Unsatisfied</th>
-                    <th scope="col">Unsatisfied</th>
-                    <th scope="col">Neutral</th>
-                    <th scope="col">Satisfied</th>
-                    <th scope="col">Very Satisfied</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Purchase</th>
-                    <td>
-                        <div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                  <td><div>
-                    <label><input type="radio" id='' name=""></label>
-                </div></td>
-                <td><div>
-                  <label><input type="radio" id='' name=""></label>
-              </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Service</th>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                  <td><div>
-                    <label><input type="radio" id='' name=""></label>
-                </div></td>
-                <td><div>
-                  <label><input type="radio" id='' name=""></label>
-              </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Company Overall</th>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                  <td><div>
-                    <label><input type="radio" id='' name=""></label>
-                </div></td>
-                <td><div>
-                  <label><input type="radio" id='' name=""></label>
-              </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Very Unlikely</th>
-                    <th scope="col">Unlikely</th>
-                    <th scope="col">Neutral</th>
-                    <th scope="col">Likely</th>
-                    <th scope="col">Very Likely</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Buy from us again</th>
-                    <td>
-                        <div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                  <td><div>
-                    <label><input type="radio" id='' name=""></label>
-                </div></td>
-                <td><div>
-                  <label><input type="radio" id='' name=""></label>
-              </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Recommend our products to others</th>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                  <td><div>
-                    <label><input type="radio" id='' name=""></label>
-                </div></td>
-                <td><div>
-                  <label><input type="radio" id='' name=""></label>
-              </div></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Recommend our company to others</th>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                    <td><div>
-                      <label><input type="radio" id='' name=""></label>
-                  </div></td>
-                  <td><div>
-                    <label><input type="radio" id='' name=""></label>
-                </div></td>
-                <td><div>
-                  <label><input type="radio" id='' name=""></label>
-              </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            
-                
-              
-              <label class="fields">Additional comments or suggestions</label>
-              <textarea style="height: 100px;width: 400px;"></textarea><br>
-              <input type="submit" value="submit">
-        </form>
+    </form>
 </body>
 </html>
